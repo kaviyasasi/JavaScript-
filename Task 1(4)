@@ -1,0 +1,5 @@
+// Task 4 - Console Practice
+
+console.log("Login Successful");
+console.warn("Password is Weak");
+console.error("Network Error");
