@@ -1,0 +1,7 @@
+// Task 6 - Shopping Cart Array
+
+let cart = ["Laptop", "Mouse", "Keyboard", "Headset", "Monitor"];
+
+console.log("First Product:", cart[0]);
+console.log("Third Product:", cart[2]);
+console.log("Last Product:", cart[4]);
