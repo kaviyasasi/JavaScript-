@@ -1,0 +1,16 @@
+// Task 15 - Grocery List
+
+let grocery = [
+  "Rice",
+  "Milk",
+  "Sugar",
+  "Eggs",
+  "Bread",
+  "Oil",
+  "Salt",
+  "Tea"
+];
+
+console.log("First Item:", grocery[0]);
+console.log("Fourth Item:", grocery[3]);
+console.log("Last Item:", grocery[7]);
