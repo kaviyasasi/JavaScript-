@@ -1,0 +1,28 @@
+// Task 17 - Variable Rules
+
+// var
+var city = "Chennai";
+city = "Bangalore"; // Reassignment - Allowed
+var city = "Mumbai"; // Redeclaration - Allowed
+
+// let
+let name = "Kaviya";
+name = "Noah"; // Reassignment - Allowed
+// let name = "Sasi"; // Redeclaration - Error
+
+// const
+const country = "India";
+// country = "USA"; // Reassignment - Error
+// const country = "Canada"; // Redeclaration - Error
+
+console.log(city);
+console.log(name);
+console.log(country);
+
+Allowed and Errors:
+
+var → ✅ Reassignment Allowed, ✅ Redeclaration Allowed
+
+let → ✅ Reassignment Allowed, ❌ Redeclaration Error
+
+const → ❌ Reassignment Error, ❌ Redeclaration Error
