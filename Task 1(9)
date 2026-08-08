@@ -1,0 +1,12 @@
+// Task 9 - Product Details
+
+let product = {
+  productName: "Smartphone",
+  brand: "Samsung",
+  price: 25000,
+  colors: ["Black", "Blue", "White"]
+};
+
+console.log("Brand:", product.brand);
+console.log("Price:", product.price);
+console.log("Second Color:", product.colors[1]);
