@@ -1,0 +1,13 @@
+// Task 19 - Company Database
+
+let company = {
+  company: "Tech Solutions",
+  employees: ["Kaviya", "Rahul", "Priya"],
+  location: "Chennai",
+  foundedYear: 2015,
+  CEO: "Mr. Arun"
+};
+
+console.log("CEO:", company.CEO);
+console.log("Location:", company.location);
+console.log("First Employee:", company.employees[0]);
