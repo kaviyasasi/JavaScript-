@@ -1,0 +1,7 @@
+// Task 2 - Mobile Price
+
+let price = 25000;
+
+price = 27000;
+
+console.log("Updated Price:", price);
