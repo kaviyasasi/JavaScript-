@@ -1,0 +1,12 @@
+// Task 14 - School Object
+
+let school = {
+  schoolName: "ABC Public School",
+  principal: "Mr. Kumar",
+  totalStudents: 1500,
+  classes: ["6th", "7th", "8th", "9th", "10th"]
+};
+
+console.log("School Name:", school.schoolName);
+console.log("Principal:", school.principal);
+console.log("Last Class:", school.classes[4]);
