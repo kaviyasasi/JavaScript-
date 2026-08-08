@@ -1,0 +1,14 @@
+// Task 7 - Favorite Movies
+
+let movies = [
+  "Leo",
+  "Master",
+  "Vikram",
+  "Jailer",
+  "96",
+  "Soorarai Pottru"
+];
+
+console.log("2nd Movie:", movies[1]);
+console.log("5th Movie:", movies[4]);
+console.log("Last Movie:", movies[5]);
