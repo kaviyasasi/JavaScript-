@@ -1,0 +1,12 @@
+// Task 20 - Mini Profile
+
+let profile = {
+  name: "Kaviya",
+  city: "Chennai",
+  hobbies: ["Reading", "Coding", "Music"],
+  age: 23
+};
+
+console.log("Name:", profile.name);
+console.log("Second Hobby:", profile.hobbies[1]);
+console.log("Age:", profile.age);
