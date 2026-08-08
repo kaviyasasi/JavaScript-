@@ -1,0 +1,16 @@
+// Task 12 - Predict the Output
+
+let a = 10;
+
+let b = a++;
+
+let c = ++b;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+Predicted Output: 
+11
+11
+12
