@@ -1,0 +1,9 @@
+// Task 1 - Student Details
+
+const collegeName = "ABC College";
+let studentName = "Kaviya";
+var studentAge = 23;
+
+console.log("College Name:", collegeName);
+console.log("Student Name:", studentName);
+console.log("Student Age:", studentAge);
