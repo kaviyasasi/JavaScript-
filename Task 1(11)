@@ -1,0 +1,15 @@
+// Task 11 - Increment Practice
+
+let a = 5;
+
+a++;
+console.log("After a++:", a);
+
+++a;
+console.log("After ++a:", a);
+
+a--;
+console.log("After a--:", a);
+
+--a;
+console.log("After --a:", a);
