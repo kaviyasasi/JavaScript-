@@ -1,0 +1,11 @@
+// Task 18 - Marks Calculation
+
+let tamil = 85;
+let english = 90;
+let maths = 95;
+
+let total = tamil + english + maths;
+let average = total / 3;
+
+console.log("Total:", total);
+console.log("Average:", average);
