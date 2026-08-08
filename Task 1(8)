@@ -1,0 +1,14 @@
+// Task 8 - Employee Object
+
+let employee = {
+  name: "Kaviya",
+  age: 23,
+  department: "Software Development",
+  skills: ["JavaScript", "HTML", "CSS"],
+  salary: 40000
+};
+
+console.log("Employee Name:", employee.name);
+console.log("Department:", employee.department);
+console.log("First Skill:", employee.skills[0]);
+console.log("Salary:", employee.salary);
