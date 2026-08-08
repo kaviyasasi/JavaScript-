@@ -1,0 +1,11 @@
+// Task 5 - Data Types
+
+let name = "Kaviya";
+let age = 23;
+let isDeveloper = true;
+let address;
+
+console.log(name, typeof name);
+console.log(age, typeof age);
+console.log(isDeveloper, typeof isDeveloper);
+console.log(address, typeof address);
