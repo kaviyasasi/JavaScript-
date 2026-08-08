@@ -1,0 +1,16 @@
+// Task 13 - Predict the Output
+
+let x = 7;
+
+let y = --x;
+
+let z = y++;
+
+console.log(x);
+console.log(y);
+console.log(z);
+
+Predicted Output:
+6
+7
+6
