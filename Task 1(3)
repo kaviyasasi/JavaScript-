@@ -1,0 +1,7 @@
+// Task 3 - Company Name
+
+const company = "Google";
+
+company = "Microsoft"; // This will cause an error
+
+console.log(company);
