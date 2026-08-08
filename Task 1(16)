@@ -1,0 +1,11 @@
+// Task 16 - User Profile
+
+let username = "Kaviya";
+let email = "kaviya@gmail.com";
+let age = 23;
+let isPremium = true;
+
+console.log(username, typeof username);
+console.log(email, typeof email);
+console.log(age, typeof age);
+console.log(isPremium, typeof isPremium);
