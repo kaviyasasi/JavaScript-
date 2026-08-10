@@ -1,0 +1,8 @@
+Switch – Traffic Light
+Create:
+let trafficLight = "green";
+Using switch, display:
+red → "Stop the vehicle"
+yellow → "Get ready"
+green → "Go"
+Anything else → "Invalid traffic light"
