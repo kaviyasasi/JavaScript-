@@ -1,0 +1,27 @@
+console.log(10 > 5 && 20 > 15 || 5 > 10);
+
+Output: true
+
+console.log(10 < 5 || 20 >= 20 && 5 == "5");
+
+Output: true
+
+console.log(15 === "15" || 10 > 5 && 8 < 3);
+
+Output: false
+
+console.log(20 >= 20 && 5 !== "5" || 10 < 5);
+
+Output: true
+
+console.log(25 < 20 || 30 == "30" && 10 >= 10);
+
+Output: true
+
+Final answers:
+
+true
+true
+false
+true
+true
