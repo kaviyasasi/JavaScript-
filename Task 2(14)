@@ -1,0 +1,17 @@
+let age = 23;
+let height = 175;
+let weight = 75;
+
+if (age >= 21) {
+    if (height >= 170) {
+        if (weight >= 70) {
+            console.log("Candidate is eligible");
+        } else {
+            console.log("Not eligible: Weight is below 70 kg");
+        }
+    } else {
+        console.log("Not eligible: Height is below 170 cm");
+    }
+} else {
+    console.log("Not eligible: Age is below 21");
+}
