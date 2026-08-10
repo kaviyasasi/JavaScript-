@@ -1,0 +1,11 @@
+let stringValue = "Hello";
+let numberValue = 25;
+let booleanValue = true;
+let undefinedValue;
+let nullValue = null;
+
+console.log(stringValue, typeof stringValue);
+console.log(numberValue, typeof numberValue);
+console.log(booleanValue, typeof booleanValue);
+console.log(undefinedValue, typeof undefinedValue);
+console.log(nullValue, typeof nullValue);
