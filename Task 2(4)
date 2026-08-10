@@ -1,0 +1,6 @@
+let shoppingList = ["Shirt", "Pant", "Shoes", "Watch", "Bag", "Cap"];
+
+console.log(shoppingList[0]); // First product
+console.log(shoppingList[2]); // Third product
+console.log(shoppingList[5]); // Last product
+console.log(shoppingList);    // Complete array
