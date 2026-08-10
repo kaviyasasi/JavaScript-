@@ -1,0 +1,11 @@
+let employee = {
+    name: "Kaviya",
+    age: 23,
+    role: "Software Developer",
+    salary: 40000
+};
+
+console.log(employee.name);
+console.log(employee.age);
+console.log(employee.role);
+console.log(employee.salary);
