@@ -1,0 +1,9 @@
+let studentName = "Kaviya";
+const age = 23;
+var course = "B.Tech";
+let mark = 85;
+
+console.log(studentName);
+console.log(age);
+console.log(course);
+console.log(mark);
