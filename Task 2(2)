@@ -1,0 +1,9 @@
+let name = prompt("Enter your name:");
+let age = prompt("Enter your age:");
+
+console.log(name);
+alert(age);
+
+✅ prompt() → gets Name and Age
+✅ console.log() → displays Name
+✅ alert() → displays Age
