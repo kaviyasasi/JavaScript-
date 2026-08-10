@@ -1,0 +1,13 @@
+let price = 500;
+let quantity = 3;
+
+let totalPrice = price * quantity;
+let discount = 100;
+let finalAmount = totalPrice - discount;
+
+console.log("Total Price:", totalPrice);
+console.log("Discount:", discount);
+console.log("Final Amount:", finalAmount);
+
+console.log("Addition:", price + quantity);
+console.log("Division:", totalPrice / quantity);
