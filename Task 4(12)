@@ -1,0 +1,18 @@
+// Object Details
+
+let employee = {
+    name: "Arun",
+    empId: "STK-101",
+    role: "Developer",
+    salary: 45000
+};
+
+for (let key in employee) {
+    console.log(key + ":", employee[key]);
+}
+
+// Output:
+// name: Arun
+// empId: STK-101
+// role: Developer
+// salary: 45000
