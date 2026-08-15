@@ -1,0 +1,27 @@
+// Nested Object Destructuring
+
+let company = {
+    name: "Stackly",
+    employee: {
+        name: "Arun",
+        role: "Developer",
+        salary: 50000
+    }
+};
+
+let {
+    employee: {
+        name: employeeName,
+        role,
+        salary
+    }
+} = company;
+
+console.log("Employee Name:", employeeName);
+console.log("Role:", role);
+console.log("Salary:", salary);
+
+// Output:
+// Employee Name: Arun
+// Role: Developer
+// Salary: 50000
