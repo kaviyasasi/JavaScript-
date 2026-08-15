@@ -1,0 +1,11 @@
+let products = ["Laptop", "Mouse", "Keyboard", "Monitor"];
+let prices = [50000, 1000, 2000, 15000];
+
+let total = 0;
+
+for (let i = 0; i < products.length; i++) {
+    console.log(products[i] + " - ₹" + prices[i]);
+    total = total + prices[i];
+}
+
+console.log("Total = ₹" + total);
