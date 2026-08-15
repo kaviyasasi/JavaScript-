@@ -1,0 +1,10 @@
+// Employee Salary
+
+function salaryDetails(salary, bonus) {
+    return salary + bonus;
+}
+
+console.log(salaryDetails(40000, 5000));
+
+// Output:
+// 45000
