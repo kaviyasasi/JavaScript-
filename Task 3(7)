@@ -1,0 +1,22 @@
+let employee = {
+    name: "Arun",
+    empId: "STK-101",
+    role: "Software Engineer",
+    salary: 45000
+};
+
+// Using for...in
+for (let key in employee) {
+    console.log(key + " : " + employee[key]);
+}
+
+// Calculate bonus
+function calculateBonus() {
+    if (employee.salary >= 40000) {
+        console.log("Bonus = 5000");
+    } else {
+        console.log("Bonus = 3000");
+    }
+}
+
+calculateBonus();
