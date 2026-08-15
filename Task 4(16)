@@ -1,0 +1,26 @@
+// Callback Task
+
+function calculate(a, b, callback) {
+    return callback(a, b);
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+function sub(a, b) {
+    return a - b;
+}
+
+function mul(a, b) {
+    return a * b;
+}
+
+console.log(calculate(20, 10, add)); // 30
+console.log(calculate(20, 10, sub)); // 10
+console.log(calculate(20, 10, mul)); // 200
+
+// Output:
+// 30
+// 10
+// 200
