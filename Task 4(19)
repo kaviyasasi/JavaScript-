@@ -1,0 +1,16 @@
+// Array Destructuring
+
+let student = ["Arun", "ECE", 8.5, "Developer"];
+
+let [name, department, cgpa, role] = student;
+
+console.log("Name:", name);
+console.log("Department:", department);
+console.log("CGPA:", cgpa);
+console.log("Role:", role);
+
+// Output:
+// Name: Arun
+// Department: ECE
+// CGPA: 8.5
+// Role: Developer
