@@ -1,0 +1,7 @@
+let salary = 30000;
+let bonus = 5000;
+let tax = 2000;
+
+let finalSalary = salary + bonus - tax;
+
+console.log("Final Salary:", finalSalary);
