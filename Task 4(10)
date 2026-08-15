@@ -1,0 +1,23 @@
+// OTP System
+
+let correctOTP = 1234;
+let attempts = 0;
+let enteredOTP = 1234;
+
+while (attempts < 3) {
+    if (enteredOTP === correctOTP) {
+        console.log("OTP verified");
+        break;
+    } else {
+        attempts++;
+        
+        if (attempts === 3) {
+            console.log("Account blocked");
+        } else {
+            console.log("Incorrect OTP");
+        }
+    }
+}
+
+// Output:
+// OTP verified
