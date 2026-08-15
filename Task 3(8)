@@ -1,0 +1,22 @@
+function deposit(balance, amount) {
+    balance = balance + amount;
+    console.log("Deposited: ₹" + amount);
+    return balance;
+}
+
+function withdraw(balance, amount) {
+    balance = balance - amount;
+    console.log("Withdrawn: ₹" + amount);
+    return balance;
+}
+
+function checkBalance(balance) {
+    console.log("Current Balance: ₹" + balance);
+    return balance;
+}
+
+let balance = 10000;
+
+balance = deposit(balance, 5000);
+balance = withdraw(balance, 2000);
+checkBalance(balance);
