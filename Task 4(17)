@@ -1,0 +1,24 @@
+// Generator Task
+
+function* rewards() {
+    yield "₹100 Cashback";
+    yield "10% Discount";
+    yield "₹500 Cashback";
+    yield "20% Discount";
+    yield "Better Luck Next Time";
+}
+
+let reward = rewards();
+
+console.log(reward.next().value);
+console.log(reward.next().value);
+console.log(reward.next().value);
+console.log(reward.next().value);
+console.log(reward.next().value);
+
+// Output:
+// ₹100 Cashback
+// 10% Discount
+// ₹500 Cashback
+// 20% Discount
+// Better Luck Next Time
