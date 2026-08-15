@@ -1,0 +1,11 @@
+// Spread Operator
+
+let frontend = ["HTML", "CSS", "JavaScript"];
+let backend = ["Node", "Express", "MongoDB"];
+
+let fullStack = [...frontend, ...backend];
+
+console.log(fullStack);
+
+// Output:
+// ["HTML", "CSS", "JavaScript", "Node", "Express", "MongoDB"]
