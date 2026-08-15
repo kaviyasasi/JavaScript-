@@ -1,0 +1,22 @@
+
+
+let username = "admin";
+let password = "1234";
+let otp = 5555;
+
+if (username === "admin") {
+    if (password === "1234") {
+        if (otp === 5555) {
+            console.log("Login successful");
+        } else {
+            console.log("Incorrect OTP");
+        }
+    } else {
+        console.log("Incorrect password");
+    }
+} else {
+    console.log("Incorrect username");
+}
+
+// Output:
+// Login successful
