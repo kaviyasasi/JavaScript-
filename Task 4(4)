@@ -1,0 +1,20 @@
+// ATM Withdrawal
+
+let balance = 10000;
+let withdrawal = 2500;
+
+if (withdrawal <= 0) {
+    console.log("Error: Withdrawal must be greater than 0");
+} else if (withdrawal > balance) {
+    console.log("Error: Withdrawal cannot exceed balance");
+} else if (withdrawal % 100 !== 0) {
+    console.log("Error: Withdrawal must be a multiple of 100");
+} else {
+    balance = balance - withdrawal;
+    console.log("Withdrawal Successful");
+    console.log("Remaining Balance:", balance);
+}
+
+// Output:
+// Withdrawal Successful
+// Remaining Balance: 7500
