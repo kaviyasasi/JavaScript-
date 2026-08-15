@@ -1,0 +1,24 @@
+let correctUsername = "admin";
+let correctPassword = "12345";
+
+let attempts = 0;
+let loginSuccessful = false;
+
+while (attempts < 3) {
+    let username = prompt("Enter username:");
+    let password = prompt("Enter password:");
+
+    attempts++;
+
+    if (username === correctUsername && password === correctPassword) {
+        console.log("Login successful");
+        loginSuccessful = true;
+        break;
+    } else {
+        console.log("Wrong username or password");
+    }
+}
+
+if (loginSuccessful === false) {
+    console.log("Account locked");
+}
