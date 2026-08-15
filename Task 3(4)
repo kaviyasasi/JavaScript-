@@ -1,0 +1,25 @@
+let math = Number(prompt("Enter Math marks:"));
+let english = Number(prompt("Enter English marks:"));
+let science = Number(prompt("Enter Science marks:"));
+let social = Number(prompt("Enter Social marks:"));
+let computer = Number(prompt("Enter Computer marks:"));
+
+let total = math + english + science + social + computer;
+let average = total / 5;
+let grade;
+
+if (average >= 90) {
+    grade = "A";
+} else if (average >= 80) {
+    grade = "B";
+} else if (average >= 70) {
+    grade = "C";
+} else if (average >= 60) {
+    grade = "D";
+} else {
+    grade = "F";
+}
+
+console.log("Total = " + total);
+console.log("Average = " + average);
+console.log("Grade = " + grade);
