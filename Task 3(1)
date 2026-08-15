@@ -1,0 +1,20 @@
+// Get employee details
+let employeeName = prompt("Enter employee name:");
+let age = Number(prompt("Enter employee age:"));
+let experience = Number(prompt("Enter years of experience:"));
+let salary = Number(prompt("Enter employee salary:"));
+
+// Check eligibility
+if (age >= 21 && experience >= 1 && salary >= 20000) {
+    console.log("Employee is eligible");
+} else {
+    if (age < 21) {
+        console.log("Not eligible: Age must be at least 21 years.");
+    }
+    if (experience < 1) {
+        console.log("Not eligible: Experience must be at least 1 year.");
+    }
+    if (salary < 20000) {
+        console.log("Not eligible: Salary must be at least 20,000.");
+    }
+}
