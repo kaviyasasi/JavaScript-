@@ -1,0 +1,5 @@
+let numbers = [10, 45, 23, 89, 12, 67];
+
+let largest = Math.max(...numbers);
+
+console.log(largest);
