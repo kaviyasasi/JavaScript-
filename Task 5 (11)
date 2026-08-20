@@ -1,0 +1,10 @@
+function checkEligibility(age, height, weight) {
+    if (age >= 21 && height >= 170 && weight >= 70) {
+        return "Eligible";
+    } else {
+        return "Not eligible";
+    }
+}
+
+console.log(checkEligibility(22, 175, 75));
+console.log(checkEligibility(20, 175, 75));
