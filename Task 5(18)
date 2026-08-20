@@ -1,0 +1,12 @@
+let employees = [
+  {name: "Arun", salary: 30000},
+  {name: "Bala", salary: 50000},
+  {name: "Kumar", salary: 25000},
+  {name: "Ravi", salary: 70000}
+];
+
+let totalSalary = employees.reduce((total, employee) => {
+  return total + employee.salary;
+}, 0);
+
+console.log(totalSalary);
