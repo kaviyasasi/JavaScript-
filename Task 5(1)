@@ -1,0 +1,18 @@
+// Student Details
+
+let name = "Arun";
+let age = 21;
+let department = "ECE";
+let cgpa = 8.5;
+
+// Normal Concatenation
+console.log("Name: " + name);
+console.log("Age: " + age);
+console.log("Department: " + department);
+console.log("CGPA: " + cgpa);
+
+// Template Literals
+console.log(`Name: ${name}`);
+console.log(`Age: ${age}`);
+console.log(`Department: ${department}`);
+console.log(`CGPA: ${cgpa}`);
