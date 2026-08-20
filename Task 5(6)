@@ -1,0 +1,15 @@
+let balance = 10000;
+
+let amount = Number(prompt("Enter withdrawal amount:"));
+
+if (amount <= 0) {
+    console.log("Amount must be greater than 0");
+} else if (amount > balance) {
+    console.log("Insufficient balance");
+} else if (amount % 100 !== 0) {
+    console.log("Amount must be a multiple of ₹100");
+} else {
+    balance = balance - amount;
+    console.log("Withdrawal successful");
+    console.log("Remaining balance: ₹" + balance);
+}
