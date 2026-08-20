@@ -1,0 +1,240 @@
+let employees = [
+    {
+        id: 101,
+        name: "Arun",
+        department: "IT",
+        salary: 45000,
+        experience: 2
+    },
+    {
+        id: 102,
+        name: "Bala",
+        department: "HR",
+        salary: 55000,
+        experience: 4
+    },
+    {
+        id: 103,
+        name: "Kumar",
+        department: "IT",
+        salary: 75000,
+        experience: 6
+    },
+    {
+        id: 104,
+        name: "Ravi",
+        department: "Finance",
+        salary: 35000,
+        experience: 2
+    },
+    {
+        id: 105,
+        name: "Priya",
+        department: "HR",
+        salary: 65000,
+        experience: 5
+    },
+    {
+        id: 106,
+        name: "Divya",
+        department: "IT",
+        salary: 90000,
+        experience: 7
+    },
+    {
+        id: 107,
+        name: "Meena",
+        department: "Sales",
+        salary: 40000,
+        experience: 3
+    },
+    {
+        id: 108,
+        name: "Vijay",
+        department: "Finance",
+        salary: 80000,
+        experience: 6
+    }
+];
+
+
+// 1. Display All Employees
+function displayEmployees() {
+    if (employees.length === 0) {
+        console.log("No employees available.");
+        return;
+    }
+
+    employees.forEach(function(employee) {
+        console.log(
+            "ID:", employee.id,
+            "| Name:", employee.name,
+            "| Department:", employee.department,
+            "| Salary:", employee.salary,
+            "| Experience:", employee.experience
+        );
+    });
+}
+
+
+// 2. Add Employee
+function addEmployee() {
+    let id = Number(prompt("Enter Employee ID:"));
+    let name = prompt("Enter Employee Name:");
+    let department = prompt("Enter Department:");
+    let salary = Number(prompt("Enter Salary:"));
+    let experience = Number(prompt("Enter Experience:"));
+
+    let newEmployee = {
+        id: id,
+        name: name,
+        department: department,
+        salary: salary,
+        experience: experience
+    };
+
+    employees.push(newEmployee);
+
+    console.log("Employee added successfully!");
+}
+
+
+// 3. Search Employee
+function searchEmployee() {
+    let id = Number(prompt("Enter Employee ID to search:"));
+
+    let employee = employees.find(function(employee) {
+        return employee.id === id;
+    });
+
+    if (employee) {
+        console.log("Employee Found:");
+        console.log(employee);
+    } else {
+        console.log("Employee not found.");
+    }
+}
+
+
+// 4. Filter High Salary Employees
+function highSalaryEmployees() {
+    let amount = Number(prompt("Enter minimum salary:"));
+
+    let highSalary = employees.filter(function(employee) {
+        return employee.salary >= amount;
+    });
+
+    if (highSalary.length === 0) {
+        console.log("No employees found.");
+    } else {
+        console.log("High Salary Employees:");
+
+        highSalary.forEach(function(employee) {
+            console.log(employee);
+        });
+    }
+}
+
+
+// 5. Calculate Total Salary
+function calculateTotalSalary() {
+    let totalSalary = employees.reduce(function(total, employee) {
+        return total + employee.salary;
+    }, 0);
+
+    console.log("Total Salary:", totalSalary);
+}
+
+
+// 6. Sort By Salary
+function sortBySalary() {
+    employees.sort(function(a, b) {
+        return a.salary - b.salary;
+    });
+
+    console.log("Employees sorted by salary:");
+
+    displayEmployees();
+}
+
+
+// 7. Delete Employee
+function deleteEmployee() {
+    let id = Number(prompt("Enter Employee ID to delete:"));
+
+    let index = employees.findIndex(function(employee) {
+        return employee.id === id;
+    });
+
+    if (index !== -1) {
+        employees.splice(index, 1);
+        console.log("Employee deleted successfully!");
+    } else {
+        console.log("Employee not found.");
+    }
+}
+
+
+// 8. Menu
+function employeeManagementSystem() {
+
+    let choice;
+
+    do {
+        choice = Number(prompt(
+            "EMPLOYEE MANAGEMENT SYSTEM\n\n" +
+            "1. Display All Employees\n" +
+            "2. Add Employee\n" +
+            "3. Search Employee\n" +
+            "4. Filter High Salary Employees\n" +
+            "5. Calculate Total Salary\n" +
+            "6. Sort By Salary\n" +
+            "7. Delete Employee\n" +
+            "8. Exit\n\n" +
+            "Enter your choice:"
+        ));
+
+        switch (choice) {
+
+            case 1:
+                displayEmployees();
+                break;
+
+            case 2:
+                addEmployee();
+                break;
+
+            case 3:
+                searchEmployee();
+                break;
+
+            case 4:
+                highSalaryEmployees();
+                break;
+
+            case 5:
+                calculateTotalSalary();
+                break;
+
+            case 6:
+                sortBySalary();
+                break;
+
+            case 7:
+                deleteEmployee();
+                break;
+
+            case 8:
+                console.log("Exiting Employee Management System...");
+                break;
+
+            default:
+                console.log("Invalid choice. Please try again.");
+        }
+
+    } while (choice !== 8);
+}
+
+
+// Start Program
+employeeManagementSystem();
