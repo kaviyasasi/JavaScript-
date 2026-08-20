@@ -1,0 +1,5 @@
+function calculateSalary(basicSalary, bonus) {
+    return basicSalary + bonus;
+}
+
+console.log(calculateSalary(30000, 5000));
