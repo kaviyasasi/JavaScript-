@@ -1,16 +1,10 @@
-let cart = ["Laptop", "Mouse", "Keyboard"];
+function checkEligibility(age, height, weight) {
+    if (age >= 21 && height >= 170 && weight >= 70) {
+        return "Eligible";
+    } else {
+        return "Not eligible";
+    }
+}
 
-// Add "Monitor"
-cart.push("Monitor");
-
-// Remove "Mouse"
-cart.splice(1, 1);
-
-// Add "Headset" at the beginning
-cart.unshift("Headset");
-
-// Remove the last item
-cart.pop();
-
-// Print final cart
-console.log(cart);
+console.log(checkEligibility(22, 175, 75));
+console.log(checkEligibility(20, 175, 75));
