@@ -1,0 +1,610 @@
+// =====================================================
+// JAVASCRIPT PRACTICAL TASK
+// EMPLOYEE MANAGEMENT SYSTEM
+// =====================================================
+
+
+// -----------------------------------------------------
+// 1. CREATE EMPLOYEE ARRAY
+// -----------------------------------------------------
+
+let employees = [
+    {
+        id: 101,
+        name: "Arun",
+        department: "IT",
+        salary: 45000,
+        experience: 2,
+        skills: ["HTML", "CSS", "JavaScript"],
+        joiningDate: "2022-06-15"
+    },
+    {
+        id: 102,
+        name: "Bala",
+        department: "HR",
+        salary: 55000,
+        experience: 4,
+        skills: ["Recruitment", "Communication", "Excel"],
+        joiningDate: "2020-03-10"
+    },
+    {
+        id: 103,
+        name: "Kumar",
+        department: "IT",
+        salary: 75000,
+        experience: 5,
+        skills: ["Java", "Spring", "SQL"],
+        joiningDate: "2019-08-20"
+    },
+    {
+        id: 104,
+        name: "Ravi",
+        department: "Finance",
+        salary: 30000,
+        experience: 1,
+        skills: ["Excel", "Accounting", "Tally"],
+        joiningDate: "2024-01-05"
+    },
+    {
+        id: 105,
+        name: "Priya",
+        department: "Marketing",
+        salary: 65000,
+        experience: 3,
+        skills: ["SEO", "Content", "Social Media"],
+        joiningDate: "2021-11-12"
+    },
+    {
+        id: 106,
+        name: "Divya",
+        department: "IT",
+        salary: 120000,
+        experience: 7,
+        skills: ["React", "Node.js", "MongoDB"],
+        joiningDate: "2017-05-18"
+    },
+    {
+        id: 107,
+        name: "Vijay",
+        department: "Sales",
+        salary: 38000,
+        experience: 2,
+        skills: ["Sales", "Communication", "CRM"],
+        joiningDate: "2022-09-25"
+    },
+    {
+        id: 108,
+        name: "Meena",
+        department: "IT",
+        salary: 90000,
+        experience: 6,
+        skills: ["Python", "Django", "SQL"],
+        joiningDate: "2018-07-30"
+    }
+];
+
+
+// -----------------------------------------------------
+// 2. DISPLAY ALL EMPLOYEES - forEach()
+// -----------------------------------------------------
+
+console.log("===== ALL EMPLOYEES =====");
+
+employees.forEach(function(employee) {
+    console.log(
+        "ID:", employee.id,
+        "| Name:", employee.name,
+        "| Department:", employee.department,
+        "| Salary:", employee.salary,
+        "| Experience:", employee.experience,
+        "| Skills:", employee.skills.join(", ")
+    );
+});
+
+
+// -----------------------------------------------------
+// 3. FIND EMPLOYEES WITH SALARY > ₹40,000 - filter()
+// -----------------------------------------------------
+
+console.log("\n===== SALARY GREATER THAN ₹40,000 =====");
+
+let highSalaryEmployees = employees.filter(function(employee) {
+    return employee.salary > 40000;
+});
+
+console.log(highSalaryEmployees);
+
+
+// -----------------------------------------------------
+// 4. FIND PARTICULAR EMPLOYEE USING ID - find()
+// -----------------------------------------------------
+
+console.log("\n===== FIND EMPLOYEE =====");
+
+let employeeFound = employees.find(function(employee) {
+    return employee.id === 103;
+});
+
+console.log(employeeFound);
+
+
+// -----------------------------------------------------
+// 5. CALCULATE TOTAL SALARY - reduce()
+// -----------------------------------------------------
+
+console.log("\n===== TOTAL SALARY =====");
+
+let totalSalary = employees.reduce(function(total, employee) {
+    return total + employee.salary;
+}, 0);
+
+console.log("Total Salary = ₹" + totalSalary);
+
+
+// -----------------------------------------------------
+// 6. CHECK SALARY ABOVE ₹1,00,000 - some()
+// -----------------------------------------------------
+
+console.log("\n===== SOME() CHECK =====");
+
+let salaryAboveOneLakh = employees.some(function(employee) {
+    return employee.salary > 100000;
+});
+
+console.log(
+    "Is there any employee earning above ₹1,00,000?",
+    salaryAboveOneLakh
+);
+
+
+// -----------------------------------------------------
+// 7. CHECK EXPERIENCE - every()
+// -----------------------------------------------------
+
+console.log("\n===== EVERY() CHECK =====");
+
+let allHaveExperience = employees.every(function(employee) {
+    return employee.experience >= 1;
+});
+
+console.log(
+    "Do all employees have at least 1 year experience?",
+    allHaveExperience
+);
+
+
+// -----------------------------------------------------
+// 8. SORT EMPLOYEES BY SALARY HIGH TO LOW
+// -----------------------------------------------------
+
+console.log("\n===== SALARY HIGH TO LOW =====");
+
+let sortedEmployees = [...employees].sort(function(a, b) {
+    return b.salary - a.salary;
+});
+
+console.log(sortedEmployees);
+
+
+// -----------------------------------------------------
+// 9. ARRAY MANIPULATION
+// push()
+// pop()
+// unshift()
+// shift()
+// -----------------------------------------------------
+
+console.log("\n===== ARRAY MANIPULATION =====");
+
+// Add employee using push()
+employees.push({
+    id: 109,
+    name: "Suresh",
+    department: "IT",
+    salary: 50000,
+    experience: 2,
+    skills: ["HTML", "CSS"],
+    joiningDate: "2023-04-15"
+});
+
+console.log("After push:", employees);
+
+// Remove last employee using pop()
+let removedLast = employees.pop();
+
+console.log("Removed using pop:", removedLast);
+
+// Add employee at beginning using unshift()
+employees.unshift({
+    id: 110,
+    name: "Anitha",
+    department: "HR",
+    salary: 48000,
+    experience: 3,
+    skills: ["HR", "Excel"],
+    joiningDate: "2022-02-10"
+});
+
+console.log("After unshift:", employees);
+
+// Remove first employee using shift()
+let removedFirst = employees.shift();
+
+console.log("Removed using shift:", removedFirst);
+
+
+// -----------------------------------------------------
+// 10. OBJECT DESTRUCTURING
+// -----------------------------------------------------
+
+console.log("\n===== OBJECT DESTRUCTURING =====");
+
+let firstEmployee = employees[0];
+
+let {
+    name,
+    department,
+    salary
+} = firstEmployee;
+
+console.log("Name:", name);
+console.log("Department:", department);
+console.log("Salary:", salary);
+
+
+// -----------------------------------------------------
+// 11. ARRAY DESTRUCTURING
+// -----------------------------------------------------
+
+console.log("\n===== ARRAY DESTRUCTURING =====");
+
+let [skill1, skill2, skill3] = firstEmployee.skills;
+
+console.log("Skill 1:", skill1);
+console.log("Skill 2:", skill2);
+console.log("Skill 3:", skill3);
+
+
+// -----------------------------------------------------
+// 12. SPREAD OPERATOR
+// -----------------------------------------------------
+
+console.log("\n===== SPREAD OPERATOR =====");
+
+let newEmployeeArray = [...employees];
+
+console.log("New Employee Array:", newEmployeeArray);
+
+
+// -----------------------------------------------------
+// 13. REST OPERATOR
+// -----------------------------------------------------
+
+console.log("\n===== REST OPERATOR =====");
+
+function createEmployeeSkills(employeeName, ...skills) {
+    return {
+        name: employeeName,
+        skills: skills
+    };
+}
+
+let newSkillEmployee = createEmployeeSkills(
+    "Rahul",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "MongoDB"
+);
+
+console.log(newSkillEmployee);
+
+
+// -----------------------------------------------------
+// 14. SALARY CATEGORY
+// -----------------------------------------------------
+
+console.log("\n===== SALARY CATEGORY =====");
+
+function getSalaryCategory(salary) {
+
+    if (salary <= 30000) {
+        return "Junior";
+    } 
+    else if (salary <= 60000) {
+        return "Mid Level";
+    } 
+    else {
+        return "Senior";
+    }
+}
+
+employees.forEach(function(employee) {
+
+    console.log(
+        employee.name +
+        " - ₹" +
+        employee.salary +
+        " - " +
+        getSalaryCategory(employee.salary)
+    );
+
+});
+
+
+// -----------------------------------------------------
+// 15. JOINING DATE
+// getFullYear()
+// getMonth()
+// -----------------------------------------------------
+
+console.log("\n===== JOINING DATE DETAILS =====");
+
+employees.forEach(function(employee) {
+
+    let date = new Date(employee.joiningDate);
+
+    console.log(
+        employee.name +
+        " | Joining Year: " +
+        date.getFullYear() +
+        " | Joining Month: " +
+        (date.getMonth() + 1)
+    );
+
+});
+
+
+// -----------------------------------------------------
+// 16. FUNCTION - ADD EMPLOYEE
+// -----------------------------------------------------
+
+function addEmployee(employee) {
+
+    employees.push(employee);
+
+    console.log("Employee added successfully!");
+
+}
+
+
+// -----------------------------------------------------
+// 17. FUNCTION - DELETE EMPLOYEE
+// -----------------------------------------------------
+
+function deleteEmployee(id) {
+
+    let index = employees.findIndex(function(employee) {
+        return employee.id === id;
+    });
+
+    if (index !== -1) {
+
+        let deletedEmployee = employees.splice(index, 1);
+
+        console.log("Employee deleted:", deletedEmployee[0]);
+
+    } 
+    else {
+
+        console.log("Employee not found!");
+
+    }
+
+}
+
+
+// -----------------------------------------------------
+// 18. FUNCTION - SEARCH EMPLOYEE
+// -----------------------------------------------------
+
+function searchEmployee(id) {
+
+    let employee = employees.find(function(employee) {
+        return employee.id === id;
+    });
+
+    if (employee) {
+
+        console.log("Employee Found:");
+        console.log(employee);
+
+    } 
+    else {
+
+        console.log("Employee not found!");
+
+    }
+
+    return employee;
+}
+
+
+// -----------------------------------------------------
+// 19. FUNCTION - CALCULATE TOTAL SALARY
+// -----------------------------------------------------
+
+function calculateTotalSalary() {
+
+    return employees.reduce(function(total, employee) {
+        return total + employee.salary;
+    }, 0);
+
+}
+
+
+// -----------------------------------------------------
+// 20. FUNCTION - DISPLAY EMPLOYEES
+// -----------------------------------------------------
+
+function displayEmployees() {
+
+    console.log("\n===== EMPLOYEE LIST =====");
+
+    employees.forEach(function(employee) {
+
+        console.log(
+            employee.id +
+            " | " +
+            employee.name +
+            " | " +
+            employee.department +
+            " | ₹" +
+            employee.salary
+        );
+
+    });
+
+}
+
+
+// -----------------------------------------------------
+// 21. TEST ADD EMPLOYEE FUNCTION
+// -----------------------------------------------------
+
+console.log("\n===== ADD EMPLOYEE FUNCTION =====");
+
+addEmployee({
+    id: 111,
+    name: "Rahul",
+    department: "IT",
+    salary: 70000,
+    experience: 4,
+    skills: ["JavaScript", "React", "Node.js"],
+    joiningDate: "2021-06-01"
+});
+
+
+// -----------------------------------------------------
+// 22. TEST DELETE EMPLOYEE FUNCTION
+// -----------------------------------------------------
+
+console.log("\n===== DELETE EMPLOYEE FUNCTION =====");
+
+deleteEmployee(111);
+
+
+// -----------------------------------------------------
+// 23. TEST SEARCH EMPLOYEE FUNCTION
+// -----------------------------------------------------
+
+console.log("\n===== SEARCH EMPLOYEE FUNCTION =====");
+
+searchEmployee(105);
+
+
+// -----------------------------------------------------
+// 24. TEST TOTAL SALARY FUNCTION
+// -----------------------------------------------------
+
+console.log("\n===== CALCULATE TOTAL SALARY FUNCTION =====");
+
+console.log(
+    "Total Salary = ₹" +
+    calculateTotalSalary()
+);
+
+
+// -----------------------------------------------------
+// 25. DISPLAY EMPLOYEES FUNCTION
+// -----------------------------------------------------
+
+displayEmployees();
+
+
+// -----------------------------------------------------
+// 26. USER INPUT - PROMPT()
+// -----------------------------------------------------
+
+console.log("\n===== SEARCH EMPLOYEE USING USER INPUT =====");
+
+let userId = prompt("Enter Employee ID:");
+
+let idNumber = Number(userId);
+
+let userEmployee = searchEmployee(idNumber);
+
+if (userEmployee) {
+
+    console.log("\n===== EMPLOYEE DETAILS =====");
+
+    console.log("ID:", userEmployee.id);
+    console.log("Name:", userEmployee.name);
+    console.log("Department:", userEmployee.department);
+    console.log("Salary:", userEmployee.salary);
+    console.log("Experience:", userEmployee.experience);
+    console.log("Skills:", userEmployee.skills.join(", "));
+    console.log("Joining Date:", userEmployee.joiningDate);
+
+} 
+else {
+
+    console.log("No employee found with ID:", idNumber);
+
+}
+
+
+// =====================================================
+// END OF EMPLOYEE MANAGEMENT SYSTEM
+// =====================================================
+
+
+===== ALL EMPLOYEES =====
+ID: 101 | Name: Arun | Department: IT | Salary: 45000
+ID: 102 | Name: Bala | Department: HR | Salary: 55000
+ID: 103 | Name: Kumar | Department: IT | Salary: 75000
+ID: 104 | Name: Ravi | Department: Finance | Salary: 30000
+ID: 105 | Name: Priya | Department: Marketing | Salary: 65000
+ID: 106 | Name: Divya | Department: IT | Salary: 120000
+ID: 107 | Name: Vijay | Department: Sales | Salary: 38000
+ID: 108 | Name: Meena | Department: IT | Salary: 90000
+
+===== SALARY GREATER THAN ₹40,000 =====
+[employees with salary above 40000]
+
+===== FIND EMPLOYEE =====
+{
+  id: 103,
+  name: "Kumar",
+  department: "IT",
+  salary: 75000,
+  experience: 5,
+  skills: ["Java", "Spring", "SQL"],
+  joiningDate: "2019-08-20"
+}
+
+===== TOTAL SALARY =====
+Total Salary = ₹518000
+
+===== SOME() CHECK =====
+Is there any employee earning above ₹1,00,000? true
+
+===== EVERY() CHECK =====
+Do all employees have at least 1 year experience? true
+
+===== SALARY CATEGORY =====
+Arun - ₹45000 - Mid Level
+Bala - ₹55000 - Mid Level
+Kumar - ₹75000 - Senior
+Ravi - ₹30000 - Junior
+Priya - ₹65000 - Senior
+Divya - ₹120000 - Senior
+Vijay - ₹38000 - Mid Level
+Meena - ₹90000 - Senior
+
+===== JOINING DATE DETAILS =====
+Arun | Joining Year: 2022 | Joining Month: 6
+Bala | Joining Year: 2020 | Joining Month: 3
+Kumar | Joining Year: 2019 | Joining Month: 8
+
+===== SEARCH EMPLOYEE USING USER INPUT =====
+Enter Employee ID: 105
+
+===== EMPLOYEE DETAILS =====
+ID: 105
+Name: Priya
+Department: Marketing
+Salary: 65000
+Experience: 3
+Skills: SEO, Content, Social Media
+Joining Date: 2021-11-12
