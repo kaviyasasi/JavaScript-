@@ -1,0 +1,96 @@
+let employees = [
+  { id: 101, name: "Arun", department: "IT", salary: 35000 },
+  { id: 102, name: "Bala", department: "HR", salary: 45000 },
+  { id: 103, name: "Kumar", department: "IT", salary: 60000 }
+];
+
+// 1. Print all employee names using forEach()
+console.log("Employee Names:");
+employees.forEach(employee => console.log(employee.name));
+
+// Output:
+// Arun
+// Bala
+// Kumar
+
+
+// 2. Get only IT employees using filter()
+let itEmployees = employees.filter(employee => employee.department === "IT");
+console.log("IT Employees:", itEmployees);
+
+// Output:
+// Arun, Kumar
+
+
+// 3. Increase every salary by 10% using map()
+let increasedSalary = employees.map(employee => ({
+  ...employee,
+  salary: employee.salary * 1.10
+}));
+console.log("10% Increased Salary:", increasedSalary);
+
+// Output:
+// Arun → 38500
+// Bala → 49500
+// Kumar → 66000
+
+
+// 4. Find employee with salary ₹45000 using find()
+let employee45000 = employees.find(employee => employee.salary === 45000);
+console.log("Employee with ₹45000:", employee45000);
+
+// Output:
+// Bala
+
+
+// 5. Calculate total salary using reduce()
+let totalSalary = employees.reduce((total, employee) => total + employee.salary, 0);
+console.log("Total Salary:", totalSalary);
+
+// Output:
+// ₹140000
+
+
+// 6. Check whether anyone earns above ₹50000 using some()
+let above50000 = employees.some(employee => employee.salary > 50000);
+console.log("Anyone above ₹50000:", above50000);
+
+// Output:
+// true
+
+
+// 7. Check whether everyone earns above ₹20000 using every()
+let above20000 = employees.every(employee => employee.salary > 20000);
+console.log("Everyone above ₹20000:", above20000);
+
+// Output:
+// true
+
+
+// 8. Sort employees by salary from highest → lowest
+let sortedEmployees = [...employees].sort((a, b) => b.salary - a.salary);
+console.log("Highest to Lowest Salary:", sortedEmployees);
+
+// Output:
+// Kumar → ₹60000
+// Bala → ₹45000
+// Arun → ₹35000
+
+
+// 9. Destructure each employee's name and salary
+employees.forEach(({ name, salary }) => {
+  console.log(name, salary);
+});
+
+// Output:
+// Arun ₹35000
+// Bala ₹45000
+// Kumar ₹60000
+
+
+// 10. Use spread operator to create a new employee list
+let newEmployeeList = [...employees];
+console.log("New Employee List:", newEmployeeList);
+
+// Output:
+// Arun, Bala, Kumar
