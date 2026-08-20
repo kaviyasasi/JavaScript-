@@ -1,0 +1,14 @@
+let employees = [
+  {name: "Arun", salary: 30000},
+  {name: "Bala", salary: 50000},
+  {name: "Kumar", salary: 25000},
+  {name: "Ravi", salary: 70000}
+];
+
+// Using some()
+let hasHighSalary = employees.some(employee => employee.salary > 100000);
+console.log("Any employee earning more than ₹100000:", hasHighSalary);
+
+// Using every()
+let allAbove20000 = employees.every(employee => employee.salary >= 20000);
+console.log("All employees earning at least ₹20000:", allAbove20000);
