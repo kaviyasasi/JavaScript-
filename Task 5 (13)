@@ -1,5 +1,16 @@
-let numbers = [10, 45, 23, 89, 12, 67];
+let cart = ["Laptop", "Mouse", "Keyboard"];
 
-let largest = Math.max(...numbers);
+// Add "Monitor"
+cart.push("Monitor");
 
-console.log(largest);
+// Remove "Mouse"
+cart.splice(1, 1);
+
+// Add "Headset" at the beginning
+cart.unshift("Headset");
+
+// Remove the last item
+cart.pop();
+
+// Print final cart
+console.log(cart);
