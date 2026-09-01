@@ -1,0 +1,19 @@
+fetch("https://fakestoreapi.com/products")
+.then(res => res.json())
+.then(jsData => {
+
+    let products = jsData.slice(0,5);
+
+    let apicard = document.querySelector(".apicard");
+
+    products.forEach(product => {
+
+        apicard.innerHTML += `
+            <div class="card">
+                ${product.image}
+                <h3>${product.title}</h3>
+            </div>
+        `;
+
+    });
+});
