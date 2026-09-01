@@ -1,0 +1,21 @@
+function lowToHigh(){
+
+    let sorted = [...allProducts];
+
+    sorted.sort(
+        (a,b) => a.price - b.price
+    );
+
+    displayProducts(sorted);
+}
+
+function highToLow(){
+
+    let sorted = [...allProducts];
+
+    sorted.sort(
+        (a,b) => b.price - a.price
+    );
+
+    displayProducts(sorted);
+}
