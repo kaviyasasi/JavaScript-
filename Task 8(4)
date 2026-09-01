@@ -1,0 +1,22 @@
+fetch("https://fakestoreapi.com/products")
+.then(res => res.json())
+.then(jsData => {
+
+    let menProducts = jsData.filter(product => {
+        return product.category === "men's clothing";
+    });
+
+    let apicard = document.querySelector(".apicard");
+
+    menProducts.forEach(product => {
+
+        apicard.innerHTML += `
+            <div class="card">
+                <h3>${product.title}</h3>
+                <p>${product.category}</p>
+            </div>
+        `;
+
+    });
+
+});
