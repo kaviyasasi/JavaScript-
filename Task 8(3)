@@ -1,0 +1,21 @@
+fetch("https://fakestoreapi.com/products")
+.then(res => res.json())
+.then(jsData => {
+
+    let expensiveProducts = jsData.filter(product => {
+        return product.price > 50;
+    });
+
+    let apicard = document.querySelector(".apicard");
+
+    expensiveProducts.forEach(product => {
+
+        apicard.innerHTML += `
+            <div class="card">
+                <h3>${product.title}</h3>
+                <h2>$${product.price}</h2>
+            </div>
+        `;
+    });
+
+});
