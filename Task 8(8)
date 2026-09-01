@@ -1,0 +1,44 @@
+fetch("https://fakestoreapi.com/products")
+.then(res => res.json())
+.then(jsData => {
+
+    allProducts = jsData;
+
+    createCategories(jsData);
+
+    displayProducts(jsData);
+
+});
+
+function createCategories(products){
+
+    let categories =
+    [...new Set(products.map(p => p.category))];
+
+    let categoryDiv =
+    document.getElementById("categories");
+
+    categoryDiv.innerHTML =
+    `<button onclick="displayProducts(allProducts)">
+    All
+    </button>`;
+
+    categories.forEach(cat => {
+
+        categoryDiv.innerHTML += `
+            <button onclick="filterCategory('${cat}')">
+                ${cat}
+            </button>
+        `;
+    });
+}
+
+function filterCategory(category){
+
+    let result =
+    allProducts.filter(product =>
+        product.category === category
+    );
+
+    displayProducts(result);
+}
