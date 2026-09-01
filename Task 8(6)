@@ -1,0 +1,43 @@
+let allProducts = [];
+
+fetch("https://fakestoreapi.com/products")
+.then(res => res.json())
+.then(jsData => {
+
+    allProducts = jsData;
+
+    displayProducts(jsData);
+
+});
+
+function displayProducts(products){
+
+    let apicard = document.querySelector(".apicard");
+
+    apicard.innerHTML = "";
+
+    products.forEach(product => {
+
+        apicard.innerHTML += `
+            <div class="card">
+                <h3>${product.title}</h3>
+            </div>
+        `;
+    });
+}
+
+function searchProduct(){
+
+    let searchText =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let result =
+    allProducts.filter(product =>
+        product.title.toLowerCase()
+        .includes(searchText)
+    );
+
+    displayProducts(result);
+}
