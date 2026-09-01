@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Store</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🛒 FAKE STORE</h1>
+
+<!-- Search -->
+
+<div class="searchSection">
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Product">
+
+    <button id="searchBtn">
+        Search
+    </button>
+
+</div>
+
+<!-- Category Buttons -->
+
+<div id="categoryButtons">
+
+</div>
+
+<!-- Sort Buttons -->
+
+<div class="sortSection">
+
+    <button id="lowToHigh">
+        Low → High
+    </button>
+
+    <button id="highToLow">
+        High → Low
+    </button>
+
+</div>
+
+<!-- Product Count -->
+
+<h2 id="totalProducts"></h2>
+
+<!-- Product Cards -->
+
+<div class="apicard">
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    padding:20px;
+    background:#f4f4f4;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.searchSection{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.searchSection input{
+    width:300px;
+    padding:10px;
+}
+
+.searchSection button{
+    padding:10px 20px;
+}
+
+.sortSection{
+    text-align:center;
+    margin:20px 0;
+}
+
+.sortSection button{
+    padding:10px 15px;
+    margin:5px;
+}
+
+#categoryButtons{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+#categoryButtons button{
+    margin:5px;
+    padding:10px 15px;
+}
+
+#totalProducts{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.apicard{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    width:260px;
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+}
+
+.card h3{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.card p{
+    margin:5px 0;
+}
+
+.price{
+    color:green;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.card button{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#0056b3;
+}
+
+
+let allProducts = [];
+
+const apicard =
+document.querySelector(".apicard");
+
+const productCount =
+document.getElementById("totalProducts");
+
+
+// FETCH API
+
+fetch("https://fakestoreapi.com/products")
+
+.then(response => response.json())
+
+.then(jsData => {
+
+    // save products
+
+    allProducts = jsData.slice(0,20);
+
+    // display cards
+
+    displayProducts(allProducts);
+
+    // count
+
+    showCount(allProducts);
+
+    // create category buttons
+
+    createCategories(allProducts);
+
+});
+
+
+// DISPLAY PRODUCTS
+
+function displayProducts(products){
+
+    apicard.innerHTML = "";
+
+    products.forEach(product => {
+
+        apicard.innerHTML += `
+
+        <div class="card">
+
+            ${product.image}
+
+            <h3>${product.title}</h3>
+
+            <p>
+            <b>Category:</b>
+            ${product.category}
+            </p>
+
+            <p>
+            ${product.description}
+            </p>
+
+            <p class="price">
+            $${product.price}
+            </p>
+
+            <button>
+            Add To Cart
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+// TOTAL COUNT
+
+function showCount(products){
+
+    productCount.innerText =
+    `Total Products : ${products.length}`;
+
+}
+
+
+// SEARCH
+
+document
+.getElementById("searchBtn")
+.addEventListener("click", () => {
+
+    let searchText =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let searchedProducts =
+    allProducts.filter(product =>
+
+        product.title
+        .toLowerCase()
+        .includes(searchText)
+
+    );
+
+    displayProducts(searchedProducts);
+
+    showCount(searchedProducts);
+
+});
+
+
+// SORT LOW TO HIGH
+
+document
+.getElementById("lowToHigh")
+.addEventListener("click", () => {
+
+    let sortedProducts =
+    [...allProducts];
+
+    sortedProducts.sort(
+
+        (a,b) => a.price - b.price
+
+    );
+
+    displayProducts(sortedProducts);
+
+});
+
+
+// SORT HIGH TO LOW
+
+document
+.getElementById("highToLow")
+.addEventListener("click", () => {
+
+    let sortedProducts =
+    [...allProducts];
+
+    sortedProducts.sort(
+
+        (a,b) => b.price - a.price
+
+    );
+
+    displayProducts(sortedProducts);
+
+});
+
+
+// CATEGORY BUTTONS
+
+function createCategories(products){
+
+    let categoriesDiv =
+    document
+    .getElementById("categoryButtons");
+
+    let categories = [
+
+        ...new Set(
+
+            products.map(
+
+                product => product.category
+
+            )
+
+        )
+
+    ];
+
+    categoriesDiv.innerHTML =
+
+    `<button id="allBtn">
+        All
+     </button>`;
+
+    categories.forEach(category => {
+
+        categoriesDiv.innerHTML +=
+
+        `<button class="catBtn">
+
+            ${category}
+
+        </button>`;
+
+    });
+
+
+
+    // ALL BUTTON
+
+    document
+    .getElementById("allBtn")
+    .addEventListener("click", () => {
+
+        displayProducts(allProducts);
+
+        showCount(allProducts);
+
+    });
+
+
+
+    // CATEGORY BUTTONS
+
+    let buttons =
+    document.querySelectorAll(".catBtn");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            let selectedCategory =
+            button.innerText;
+
+            let filteredProducts =
+
+            allProducts.filter(product =>
+
+                product.category ===
+                selectedCategory
+
+            );
+
+            displayProducts(filteredProducts);
+
+            showCount(filteredProducts);
+
+        });
+
+    });
+
+}
